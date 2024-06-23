@@ -22,7 +22,7 @@ class RAG:
         self.add_tool = FunctionTool.from_defaults(fn=self.add)
         self.multiply_tool = FunctionTool.from_defaults(fn=self.multiply)
 
-        self.llm = Ollama(model="llama3")
+        self.llm = Ollama(model="Valoryun")
         self.agent = ReActAgent.from_tools([self.multiply_tool, self.add_tool], llm=self.llm, verbose=True)
 
     def chat_rag(self, input_text):
